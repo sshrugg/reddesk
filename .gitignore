@@ -1,0 +1,14 @@
+# ignore underscores backup file
+reddesk.zip
+
+# ignore node dependency directories
+gulp/
+node_modules/
+
+#ignore local github directory
+.github/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite

@@ -2,7 +2,6 @@
 reddesk.zip
 
 # ignore node dependency directories
-gulp/
 node_modules/
 
 #ignore local github directory

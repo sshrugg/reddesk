@@ -1,0 +1,38 @@
+{
+  "name": "reddesk",
+  "version": "0.0.1",
+  "description": "Red Desk Electric",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshrugg/reddesk"
+  },
+  "author": "Daniel Aber",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sshrugg/reddesk/issues"
+  },
+  "homepage": "https://github.com/sshrugg/reddesk/blob/main/README.md",
+  "devDependencies": {
+    "autoprefixer": "^9.0.0",
+    "browser-sync": "^2.26.13",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.1",
+    "jshint": "^2.12.0"
+  },
+  "dependencies": {
+    "gulp-debug": "^4.0.0",
+    "postcss": "^8.0.0"
+  }
+}

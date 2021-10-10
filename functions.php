@@ -77,8 +77,16 @@ if ( ! function_exists( 'reddesk_setup' ) ) :
 			apply_filters(
 				'reddesk_custom_background_args',
 				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
+					'default-color' => '440000',
+					'default-image' => get_template_directory_uri() . '/images/background.jpg',
+                                        'default-repeat' => 'no-repeat',
+                                        'default-attachment' => 'fixed',
+                                        'default-position-x' => 'center',
+                                        'default-position-y' => 'center',
+                                        'default-size'           => 'cover',
+                                        'wp-head-callback'       => '_custom_background_cb',
+                                        'admin-head-callback'    => '',
+                                        'admin-preview-callback' => ''
 				)
 			)
 		);
@@ -103,6 +111,57 @@ if ( ! function_exists( 'reddesk_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'reddesk_setup' );
+
+/**
+ * Register custom fonts.
+ */
+function reddesk_fonts_url() {
+	$fonts_url = '';
+
+	/*
+	 * Translators: If there are characters in your language that are not
+	 * supported by Cormorant Garamond, and Great Vibes translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$merriweather = _x( 'on', 'Merriweather  font: on or off', 'reddesk' );
+        $titillium = _x( 'on', 'Titillium font: on or off', 'reddesk' );
+
+        $font_families = array();
+
+	if ( 'off' !== $merriweather ) {
+            $font_families[] = 'Merriweather:300,300i,400,400i,700,700i,900,900i';
+        }
+
+        if ( 'off' !== $titillium ) {
+            $font_families[] = 'Titillium+Web:200,200i,400,400i,700,700i,900';
+        }
+
+        if (in_array ('on', array($merriweather,$titillium))){
+            $query_args = array(
+		'family' => urlencode( implode( '|', $font_families ) ),
+		'subset' => urlencode( 'latin,latin-ext' ),
+            );
+            $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
+/**
+ * Add preconnect for Google Fonts.
+ *
+ */
+function reddesk_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'reddesk-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'reddesk_resource_hints', 10, 2 );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -140,7 +199,9 @@ add_action( 'widgets_init', 'reddesk_widgets_init' );
  * Enqueue scripts and styles.
  */
 function reddesk_scripts() {
-	wp_enqueue_style( 'reddesk-style', get_stylesheet_uri(), array(), _S_VERSION );
+    //Enqueue Google Fonts: Merriweather, Titillium
+        wp_enqueue_style( 'reddesk-fonts', reddesk_fonts_url() );
+        wp_enqueue_style( 'reddesk-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'reddesk-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'reddesk-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );

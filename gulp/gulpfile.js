@@ -40,7 +40,7 @@ function scssTask() {
 			.pipe(sourcemaps.init()) // initialize sourcemaps first
 			.pipe(sass({outputStyle: 'expanded', indentType: 'tab', indentWidth: '1'}).on('error', sass.logError)) // compile SCSS to CSS
 			.pipe(postcss([ autoprefixer('last 2 versions', '> 1%') ])) // PostCSS plugins
-			.pipe(sourcemaps.write(root + 'maps')) // write sourcemaps file in special maps directory
+			.pipe(sourcemaps.write('')) // write sourcemaps file in special maps directory
 			.pipe(dest(root)) // put final CSS in dist folder
 			.pipe(browserSync.stream());
 }
@@ -63,6 +63,7 @@ browserSync.init({
 
 //Imagemin
 function imageminTask() {
+    console.log('Start imageminTask');
 	return src(files.img + 'RAW/*.{png,jpg,jpeg,gif,svg}')
 			.pipe(imagemin())
 			.pipe(dest(files.img));

@@ -1,6 +1,6 @@
 /*!
 Theme Name: Red Desk Electric
-Theme URI: http://underscores.me/
+Theme URI: http://www.github.com/sshrugg/reddesk
 Author: Daniel Aber
 Author URI: http://www.daberdesign.com
 Description: Theme for the Red Desk Electric audio experimentation website.
@@ -394,7 +394,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -405,6 +405,7 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
 	clear: both;
 }
 
@@ -463,7 +464,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #fff;
+	background: #440000;
 }
 
 hr {
@@ -953,4 +954,4 @@ textarea {
 	margin-bottom: 1.5em;
 }
 
-/*# sourceMappingURL=../maps/style.css.map */
+/*# sourceMappingURL=style.css.map */

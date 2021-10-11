@@ -120,7 +120,7 @@ function reddesk_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not
-	 * supported by Cormorant Garamond, and Great Vibes translate this to 'off'. Do not translate
+	 * supported by Merriweather, and Titillium translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
 	$merriweather = _x( 'on', 'Merriweather  font: on or off', 'reddesk' );

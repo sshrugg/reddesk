@@ -6,7 +6,19 @@ optgroup,
 textarea {
 	color: $color__text-main;
 	font-family: $font__serif;
-	font-size: 1rem;
+        
+        @include for-phone-only {    
+            font-size: .9rem; 
+        }
+        
+        @include for-tablet-portrait-up {
+            font-size: 1rem;
+        }
+        
+        @include for-desktop-up {
+            font-size: 1.2rem;
+        }
+        
 	line-height: $font__line-height-body;
 }
 

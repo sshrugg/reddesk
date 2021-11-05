@@ -1,0 +1,131 @@
+//baseline
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+.site{
+    height: 100%;
+    width: 100%;    
+}
+
+.site-main{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+//Layer indexing
+.site-header, .main-navigation{
+    z-index: 200;
+}
+
+//Header
+.site-header{
+    @include header-height;
+    width: 100%;
+    position: fixed;
+    display: block;
+    transition: height;
+    @include transitiontime;
+}
+
+.header-spacer{
+    display: block;
+    @include header-height;
+    width: 100%;
+}
+
+.header-spacer.smaller{
+    @include header-height-smaller;
+}
+
+.site-header.smaller{
+    @include header-height-smaller;
+}
+
+.logo-container{
+    height: 100%;
+    flex-grow: 1;
+    text-align: right;
+    @include logo-padding;
+}
+
+.custom-logo-link,.custom-logo{
+    height: 100%;
+}
+
+.site-branding{
+    background-color: $color__background-header;
+    height: 100%;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    transition: flex-direction;
+    @include transitiontime;
+}
+
+.site-branding-text{
+    @include site-branding-padding;
+    flex-grow: 5;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: left;
+}
+
+.site-title{
+    font-family: $font__sans;
+    margin: 0px;
+    font-weight: 900;    
+    @include site-title-font-size;
+    a{
+        border-bottom: 1px solid;
+        text-decoration: none;
+        color: $color__header-primary;
+        text-shadow: 1px 1px 2.5px $color__header-primary;
+        &:hover{
+            text-shadow: 2px 2px 5px $color__header-secondary;
+            color:$color__header-primary;
+        }
+    }
+}
+
+.site-title.smaller{
+    @include site-title-font-size-smaller;
+}
+
+.site-description{
+    margin: 0px;
+    font-weight: 200;
+    @include site-description-font-size;
+    color: $color__header-secondary;
+    font-style: italic;
+    font-variant-caps: small-caps;
+    font-family: $font__sans;
+}
+
+.site-description.smaller{
+    @include site-description-font-size-smaller;
+}
+
+
+//Main Navbar
+
+.main-navigation{
+    text-align: right;
+    font-family: $font__sans;
+    max-height: 20%;
+    background-image: url(./images/black_stripe.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    background-color: $color__header-primary;
+    a{
+        color: $color__background-header;
+    }
+}
+

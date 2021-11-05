@@ -5,13 +5,17 @@
 	margin-right: auto;
 }
 
+//Page Transition Time
+@mixin transitiontime{
+    transition-duration: .2s;
+}
+
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
 // Screen Breaks
-
 @mixin for-phone-only {
   @media (max-width: 599px) { @content; }
 }
@@ -26,4 +30,112 @@
 }
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }
+}
+
+
+
+//Header
+
+@mixin header-height{
+    @include for-phone-only {  
+        height: 10%;
+    }
+    
+    @include for-tablet-portrait-up {
+        height: 30%;
+    }
+    
+    @include for-desktop-up {
+        height: 45%;
+    }
+}
+
+@mixin header-height-smaller{
+    @include for-phone-only {  
+        height: 10%;
+    }
+    
+    @include for-tablet-portrait-up {
+        height: 30%;
+    }
+    
+    @include for-desktop-up {
+        height: 20%;
+    }
+}
+
+@mixin logo-padding{
+    padding: 1em 0em 1em 0em;
+}
+
+@mixin site-branding-padding{
+    @include for-phone-only {
+      padding: 0em 0em 0em .5em;
+    }
+    @include for-tablet-portrait-up {
+        padding: 0em 0em 0em 2em;
+    }
+    //@include for-tablet-landscape-up {
+    //}
+    @include for-desktop-up {
+        padding: 0em 0em 0em 4em;
+    }
+    //@include for-big-desktop-up {
+    //}
+}
+
+@mixin site-title-font-size{
+    @include for-phone-only {    
+        font-size: 6vmin; 
+    }
+
+    @include for-tablet-portrait-up {
+        font-size: 6vmin;
+    }
+
+    @include for-desktop-up {
+        font-size: 9.5vmin;
+    }
+}
+
+@mixin site-title-font-size-smaller{
+    @include for-phone-only {    
+        font-size: 6vmin; 
+    }
+
+    @include for-tablet-portrait-up {
+        font-size: 6vmin;
+    }
+
+    @include for-desktop-up {
+        font-size: 5.5vmin;
+    }
+}
+
+@mixin site-description-font-size{
+    @include for-phone-only {    
+        font-size: 3vmin; 
+    }
+
+    @include for-tablet-portrait-up {
+        font-size: 3vmin;
+    }
+
+    @include for-desktop-up {
+        font-size: 3.5vmin;
+    }
+}
+
+@mixin site-description-font-size-smaller{
+    @include for-phone-only {    
+        font-size: 3vmin; 
+    }
+
+    @include for-tablet-portrait-up {
+        font-size: 3vmin;
+    }
+
+    @include for-desktop-up {
+        font-size: 2vmin;
+    }
 }

@@ -205,7 +205,11 @@ function reddesk_scripts() {
 	wp_style_add_data( 'reddesk-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'reddesk-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+        
+        if(is_home() && is_front_page()){
+                wp_enqueue_script( 'reddesk-shrinkHeader', get_template_directory_uri() . '/js/shrinkHeader.js', array(), '0.1', true );
+        }
+        
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

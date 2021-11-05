@@ -25,25 +25,90 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'reddesk' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
+	<header id="masthead" class="site-header
+                <?php
+                if ( is_front_page() && is_home() ) :
+                    ?>
+                        scrollShrink
+                    <?php
+                else :
+                    ?>
+                        smaller
+                    <?php
+                endif; ?>
+                ">
+            <div class="site-branding"
+                 
+                 
+            <?php if ( is_front_page() && is_home() ) : ?> 
+            style="background-image: url(<?php header_image() ?>); background-size: cover; background-position: bottom center; repeat: no-repeat"
+            <?php endif; ?>
+            >
+            
+                <div class="logo-container">
+                <!--Logo -->
+                
+                
+                
+                <a href ="<?php get_home_url() ?>" class="custom-logo-link">
 			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$reddesk_description = get_bloginfo( 'description', 'display' );
-			if ( $reddesk_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $reddesk_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+			//the_custom_logo();
+                            $custom_logo_id = get_theme_mod( 'custom_logo' );
+                            $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+                            if ( has_custom_logo() ) {
+                                echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '" class="custom-logo" >';
+                            } else {
+                                echo '<h1>' . get_bloginfo('name') . '</h1>';
+                            }
+                        ?>
+                </a>
+                
+                
+                
+                </div><!-- .logo-container -->
+            
+                
+            <!-- Site Branding Text-->
+                <div class="site-branding-text">
+                            <div class="site-branding-text-container">
+                                <?php
+                                if ( is_front_page() && is_home() ) :
+                                        ?>
+                                        <h1 class="site-title scrollShrink"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                        <?php
+                                else :
+                                        ?>
+                                        <p class="site-title smaller"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                                        <?php
+                                endif; ?>
+                            </div><!-- .site-title-container -->
+                            
+                            
+                            <div class="site-branding-text-container">
+                                <?php
+                                $reddesk_description = get_bloginfo( 'description', 'display' );
+                                if ( $reddesk_description || is_customize_preview() ) :
+                                        ?>
+                                        <p class="site-description
+                                            <?php
+                                                if ( is_front_page() && is_home() ) :
+                                                    ?>
+                                                        scrollShrink
+                                                    <?php
+                                                else :
+                                                    ?>
+                                                        smaller
+                                                    <?php
+                                                endif; ?>
+                                           "><?php echo $reddesk_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+                                <?php endif; ?>
+                            </div><!-- .site-description-container -->
+                                    
+                                    
+                </div><!-- .site-branding-text -->
+                                
+            </div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'reddesk' ); ?></button>
@@ -57,3 +122,4 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+<div id="header-spacer" class="header-spacer <?php if ( is_front_page() && is_home() ) :?>scrollShrink<?php else :?>smaller<?php endif; ?>"></div>

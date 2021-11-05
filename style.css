@@ -393,7 +393,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
+	color: #f3f0f0;
 	font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
 	line-height: 1.5;
 }
@@ -496,7 +496,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #440000;
+	background: #8C262E;
 	margin: 0px;
 	padding: 0px;
 	display: block;
@@ -567,15 +567,15 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #D45F6B;
 }
 
 a:visited {
-	color: #800080;
+	color: #EEEEEE;
 }
 
 a:hover, a:focus, a:active {
-	color: #191970;
+	color: #FF7381;
 }
 
 a:focus {
@@ -634,7 +634,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
+	color: #F7F3F3;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	padding: 3px;
@@ -791,7 +791,7 @@ html, body {
 }
 
 .site-branding {
-	background-color: #eaeaea;
+	background-color: #F4F0ED;
 	height: 100%;
 	height: 80%;
 	overflow: hidden;
@@ -882,13 +882,13 @@ html, body {
 .site-title a {
 	border-bottom: 1px solid;
 	text-decoration: none;
-	color: #222222;
-	text-shadow: 1px 1px 2.5px #222222;
+	color: #290C0E;
+	text-shadow: 1px 1px 2.5px #290C0E;
 }
 
 .site-title a:hover {
 	text-shadow: 2px 2px 5px #444444;
-	color: #222222;
+	color: #290C0E;
 }
 
 @media (max-width: 599px) {
@@ -961,11 +961,11 @@ html, body {
 	background-image: url(./images/black_stripe.jpg);
 	background-size: cover;
 	background-position: bottom center;
-	background-color: #222222;
+	background-color: #290C0E;
 }
 
 .main-navigation a {
-	color: #eaeaea;
+	color: #F4F0ED;
 }
 
 /*--------------------------------------------------------------
@@ -1249,7 +1249,7 @@ html, body {
 	clip: auto !important;
 	-webkit-clip-path: none;
 	        clip-path: none;
-	color: #212121;
+	color: #D7D3D3;
 	display: block;
 	font-size: 0.875rem;
 	font-weight: 700;

@@ -302,7 +302,7 @@ ul.products li.product .button {
 	top: 0;
 	position: absolute;
 	left: 0;
-	color: #4169e1;
+	color: #D45F6B;
 }
 
 p.stars a {
@@ -326,38 +326,38 @@ p.stars a::before {
 	line-height: 1;
 	font-family: star;
 	content: "\53";
-	color: #404040;
+	color: #f3f0f0;
 	text-indent: 0;
 	opacity: 0.25;
 }
 
 p.stars a:hover ~ a::before {
 	content: "\53";
-	color: #404040;
+	color: #f3f0f0;
 	opacity: 0.25;
 }
 
 p.stars:hover a::before {
 	content: "\53";
-	color: #4169e1;
+	color: #D45F6B;
 	opacity: 1;
 }
 
 p.stars.selected a.active::before {
 	content: "\53";
-	color: #4169e1;
+	color: #D45F6B;
 	opacity: 1;
 }
 
 p.stars.selected a.active ~ a::before {
 	content: "\53";
-	color: #404040;
+	color: #f3f0f0;
 	opacity: 0.25;
 }
 
 p.stars.selected a:not(.active)::before {
 	content: "\53";
-	color: #4169e1;
+	color: #D45F6B;
 	opacity: 1;
 }
 
@@ -510,7 +510,7 @@ p.no-comments {
 	height: 1em;
 	cursor: ew-resize;
 	outline: none;
-	background: #4169e1;
+	background: #D45F6B;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	margin-top: -0.25em;
@@ -531,7 +531,7 @@ p.no-comments {
 	z-index: 1;
 	display: block;
 	border: 0;
-	background: #4169e1;
+	background: #D45F6B;
 }
 
 .widget_price_filter .price_slider_wrapper .ui-widget-content {

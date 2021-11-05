@@ -77,7 +77,7 @@ if ( ! function_exists( 'reddesk_setup' ) ) :
 			apply_filters(
 				'reddesk_custom_background_args',
 				array(
-					'default-color' => '440000',
+					'default-color' => '8C262E',
 					'default-image' => get_template_directory_uri() . '/images/background.jpg',
                                         'default-repeat' => 'no-repeat',
                                         'default-attachment' => 'fixed',

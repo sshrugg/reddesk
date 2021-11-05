@@ -23,8 +23,8 @@ function reddesk_custom_header_setup() {
 			'reddesk_custom_header_args',
 			array(
 				'default-image'      => get_template_directory_uri() . '/images/white_stripe.jpg',
-                                'default-background-color' => 'eaeaea',
-				'default-text-color' => '222222',
+                                'default-background-color' => 'F4F0ED',
+				'default-text-color' => '290C0E',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,

@@ -36,6 +36,17 @@ function reddesk_custom_header_setup() {
 }
 
 /**
+ * Register the default header image
+ */
+register_default_headers( array(
+    'default-image' => array(
+        'url'           => get_stylesheet_directory_uri() . '/images/white_stripe.jpg',
+        'thumbnail_url' => get_stylesheet_directory_uri() . '/images/white_stripe.jpg',
+        'description'   => __( 'Default Header Image', 'textdomain' )
+    ),
+) );
+
+/**
  * Set up the WordPress core custom logo feature.
  *
  * @uses reddesk_header_style()
